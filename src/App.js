@@ -1,6 +1,7 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import Weather from "./Weather";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         </h1>  
         <Weather/>
       </header>
+      <Footer/>
     </div>
   );
 }
