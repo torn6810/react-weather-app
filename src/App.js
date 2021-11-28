@@ -6,6 +6,7 @@ import Footer from "./Footer";
 function App() {
   return (
     <div className="App">
+      <div className="container">
       <header className="App-header">
         <h1>
           React Weather App
@@ -13,6 +14,7 @@ function App() {
         <Weather/>
       </header>
       <Footer/>
+      </div>
     </div>
   );
 }
