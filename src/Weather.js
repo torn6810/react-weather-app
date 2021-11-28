@@ -23,7 +23,7 @@ export default function Weather() {
   
     let form = (
       <form onSubmit={searchWeather}>
-        <input type="search" placeholder="Enter a city" onChange={updateCity} />
+        <input type="search" placeholder="Enter a city" onChange={updateCity} autoFocus="on"/>
         <input type="submit" value="Search" />
       </form>
     );
