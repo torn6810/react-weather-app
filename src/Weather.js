@@ -10,7 +10,6 @@ export default function Weather() {
     }
   
     function displayWeather(response) {
-      console.log(response);
       setWeather({
         city: response.data.name,
         temperature: response.data.main.temp,
@@ -34,7 +33,7 @@ export default function Weather() {
           <ul>
             <li>Temperature: {Math.round(weather.temperature)}°F</li>
             <li>Humidity: {Math.round(weather.humidity)} %</li>
-            <li>Description: {weather.description}</li>
+            <li className="text-capitalize">Description: {weather.description}</li>
             <li>Wind: {Math.round(weather.wind)} m/h</li>
             <li>
               <img src={weather.icon} alt={weather.description} />
