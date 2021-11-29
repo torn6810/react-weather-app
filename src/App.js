@@ -11,7 +11,7 @@ function App() {
         <h1>
           React Weather App
         </h1>  
-        <Weather/>
+        <Weather city="Seattle"/>
       </header>
       <Footer/>
       </div>
