@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
+import './Weather.css';
+import FormattedDate from "./FormattedDate";
 
 export default function Weather() {
     const [city, setCity] = useState("");
@@ -10,8 +12,10 @@ export default function Weather() {
     }
   
     function displayWeather(response) {
+      console.log(response);
       setWeather({
         city: response.data.name,
+        date: new Date(response.data.dt * 1000),
         temperature: response.data.main.temp,
         humidity: response.data.main.humidity,
         description: response.data.weather[0].description,
@@ -31,6 +35,7 @@ export default function Weather() {
         <div className="WeatherSearchForm">
           {form}
           <ul>
+            <li className="day"><FormattedDate date={weather.date}/></li>
             <li>Temperature: {Math.round(weather.temperature)}°F</li>
             <li>Humidity: {Math.round(weather.humidity)} %</li>
             <li className="text-capitalize">Description: {weather.description}</li>
@@ -42,7 +47,18 @@ export default function Weather() {
         </div>
       );
     } else {
-      return form;
+      return (
+        <div className="else" >
+        {form}
+        <h1>
+          Seattle
+        </h1>  
+          <li>Temperature: 40°F</li>
+          <li>Humidity: 92%</li>
+          <li className="text-capitalize">Description: </li>
+          <li>Wind: 9 m/h</li>
+        </div>  
+        );
     }
     function searchWeather(event) {
       event.preventDefault();
