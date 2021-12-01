@@ -1,5 +1,5 @@
 import React from "react";
-import "./FormattedDate";
+import "./FormattedDate.css";
 
 export default function FormattedDate(props){
     let now=new Date();
