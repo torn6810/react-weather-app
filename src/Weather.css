@@ -1,3 +1,7 @@
 .day{
     list-style-type: none;
 }
+.weather canvas{
+    margin-right: 10px;
+    margin-top: 5px;
+}
