@@ -1,8 +1,9 @@
 import React from "react";
+import "./FormattedDate";
 
 export default function FormattedDate(props){
     let now=new Date();
-    let days=["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    let days=["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satturday"];
     let months=["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     let day=days[props.date.getDay()];
     let month=months[now.getMonth()];
@@ -20,9 +21,7 @@ export default function FormattedDate(props){
 
     return(
         <div className="FormattedDate">
-            <h2>
-            {day}, {month} {date} {currentHour}:{minutes} 
-            </h2>
+            {day} {month} {date}, {currentHour}:{minutes} 
         </div>
     )
 }
