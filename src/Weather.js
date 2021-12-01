@@ -8,16 +8,7 @@ export default function Weather(props) {
     const [city, setCity] = useState(props.city);
     const [weather, setWeather] = useState("");
     
-    function handleSubmit(event) {
-      event.preventDefault();
-      searchWeather();
-    }
-    function updateCity(event) {
-      setCity(event.target.value);
-    }
-  
     function displayWeather(response) {
-      console.log(response);
       setWeather({
         //now: new Date(),
         city: response.data.name,
@@ -29,7 +20,7 @@ export default function Weather(props) {
         icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
       });
     }
-    
+
     function searchWeather(){
       let apiKey = "1a865f34c72d6db62ee55e7dce90a4b3";
       let units = `imperial`;
@@ -37,6 +28,15 @@ export default function Weather(props) {
       axios.get(url).then(displayWeather);
     }
 
+    function handleSubmit(event) {
+      event.preventDefault();
+      searchWeather();
+    }
+
+    function updateCity(event) {
+      setCity(event.target.value);
+    }
+  
     let form = (
       <form onSubmit={handleSubmit}>
         <input type="search" placeholder="Enter a city" onChange={updateCity} autoFocus="on"/>
@@ -53,13 +53,7 @@ export default function Weather(props) {
     } else {
       searchWeather();
       return (
-        <div className="else" >
-        {form}
-        <h1>
-          Seattle
-        </h1>  
-         
-        </div>  
+      "Searching for weather..."
         );
     }
    
