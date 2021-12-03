@@ -15,7 +15,7 @@ export default function WeatherInfo(props){
             <li className="text-capitalize">Description: {props.weatherData.description}</li>
             <li>Wind: {Math.round(props.weatherData.wind)} m/h</li>
             <li>
-              <WeatherIcon code={props.weatherData.icon} alt={props.weatherData.description}/>
+              <WeatherIcon iconCode={props.weatherData.icon} alt={props.weatherData.description} size={60}/>
             </li>
           </ul>
         </div>
