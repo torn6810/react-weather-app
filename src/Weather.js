@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 import './Weather.css';
 
@@ -20,23 +21,19 @@ export default function Weather(props) {
         icon: response.data.weather[0].icon
       });
     }
-
     function searchWeather(){
       let apiKey = "1a865f34c72d6db62ee55e7dce90a4b3";
       let units = `imperial`;
       let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
       axios.get(url).then(displayWeather);
     }
-
     function handleSubmit(event) {
       event.preventDefault();
       searchWeather();
     }
-
     function updateCity(event) {
       setCity(event.target.value);
     }
-  
     let form = (
       <form onSubmit={handleSubmit}>
         <input type="search" placeholder="Enter a city" onChange={updateCity} autoFocus="on"/>
@@ -48,6 +45,7 @@ export default function Weather(props) {
         <div className="WeatherSearchForm">
           {form}
           <WeatherInfo weatherData={weather}/>
+          <WeatherForecast/>
         </div>
       );
     } else {
@@ -56,5 +54,4 @@ export default function Weather(props) {
       "Searching for weather..."
         );
     }
-   
   }
