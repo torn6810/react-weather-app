@@ -13,7 +13,7 @@ function App() {
         </h1>  
         <Weather city="Seattle"/>
       </header>
-      <Footer/>
+      <Footer />
       </div>
     </div>
   );
