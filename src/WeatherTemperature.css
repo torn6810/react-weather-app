@@ -1,6 +1,8 @@
 .units{
     font-size: 16px;
 }
-.temperature{
-    font-size: 30px;
+.WeatherTemperature{
+    font-size: 40px;
+    margin: 0px 50px 15px 0px;
+    padding-left: 0px;
 }

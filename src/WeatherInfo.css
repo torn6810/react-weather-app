@@ -1,7 +1,9 @@
+h2{
+    font-size: 40px;
+    margin: 0px 0px 15px 50px;
+}
 li{
     list-style-type: none;
     margin-right: 0px;
 }
-h2{
-    font-size: 30px;
-}
+
